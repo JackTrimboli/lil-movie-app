@@ -13,18 +13,17 @@ export default function App() {
     setSearchInput(e.target.value);
   };
 
+  const handleClick = () => {
+    console.log("clicked: ", searchInput);
+    setSearchProp(searchInput);
+  };
+
   // JSX
   return (
     <div className="App">
       <span className="search-bar">
         <input type="text" value={searchInput} onChange={handleInputChange} />
-        <button
-          onClick={() => {
-            setSearchProp(searchInput);
-          }}
-        >
-          Search
-        </button>
+        <button onClick={handleClick}>Search</button>
       </span>
       <MovieCardList searchProp={searchProp} />
     </div>
